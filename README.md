@@ -6,6 +6,12 @@
 
     $ npx create-react-app .
 
+<br/>
+
+### 005 Устанавливаем роутер
+
+    $ npm install --save react-router-dom
+
 ---
 
 **Marley**
