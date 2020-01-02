@@ -21,6 +21,15 @@
 
 ![Application](/img/pic-01.png?raw=true)
 
+
+<br/>
+
+### 007 Отрисовываем страницу логина
+
+<br/>
+
+![Application](/img/pic-02.png?raw=true)
+
 ---
 
 **Marley**
