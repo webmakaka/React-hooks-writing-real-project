@@ -12,6 +12,15 @@
 
     $ npm install --save react-router-dom
 
+<br/>
+
+### 006 Добавляем верхнее меню
+
+
+<br/>
+
+![Application](/img/pic-01.png?raw=true)
+
 ---
 
 **Marley**
