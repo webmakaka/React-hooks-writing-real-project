@@ -40,6 +40,28 @@
 ### 009 Use state хук для страницы логина
 
 
+<br/>
+
+### 010 Use ref
+
+<br/>
+
+### 011 Use effect
+
+<br/>
+
+### 012 Реализуем fetch внутри effect хука
+
+    $ npm install --save axios
+
+<br/>
+
+### 013 Use fetch хук
+
+<br/>
+
+### 014 Создаем use fetch хук
+
 ---
 
 **Marley**
