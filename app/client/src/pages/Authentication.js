@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export const Authentication = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    console.log(email);
+    console.log(password);
+  };
+
   return (
-    <div classNmae="auth-page">
+    <div className="auth-page">
       <div className="cantainer page">
         <div className="row">
           <div className="col-md-6 offset-md-3 col-xs-12">
@@ -11,13 +20,15 @@ export const Authentication = () => {
             <p className="text-xs-center">
               <Link to="register">Need an account?</Link>
             </p>
-            <form>
+            <form onSubmit={handleSubmit}>
               <fieldset>
                 <fieldset className="form-group">
                   <input
                     type="email"
                     className="form-control form-control-lg"
                     placeholder="Email"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
                   />
                 </fieldset>
               </fieldset>
@@ -28,6 +39,8 @@ export const Authentication = () => {
                     type="password"
                     className="form-control form-control-lg"
                     placeholder="Password"
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
                   />
                 </fieldset>
                 <button
