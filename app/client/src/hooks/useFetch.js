@@ -19,6 +19,9 @@ export default url => {
       return;
     }
 
+    console.log('options');
+    console.log(options);
+
     axios(BASE_URL + url, options)
       .then(res => {
         console.log('success', res);
