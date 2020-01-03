@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 
 import useFetch from 'hooks/useFetch';
 
@@ -13,9 +13,9 @@ export const Authentication = props => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
-  const [{ response, isLoading, error }, doFetch] = useFetch(apiUrl);
+  const [isSuccessfullSubmit, setIsSuccessfullSubmit] = useState(false);
 
-  console.log('hoock', props);
+  const [{ isLoading, error, response }, doFetch] = useFetch(apiUrl);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -30,9 +30,22 @@ export const Authentication = props => {
     });
   };
 
+  useEffect(() => {
+    if (!response) {
+      return;
+    }
+    console.log('response', response);
+    localStorage.setItem('token', response.user.token);
+    setIsSuccessfullSubmit(true);
+  }, [response]);
+
+  if (isSuccessfullSubmit) {
+    return <Redirect to="/" />;
+  }
+
   return (
     <div className="auth-page">
-      <div className="cantainer page">
+      <div className="container page">
         <div className="row">
           <div className="col-md-6 offset-md-3 col-xs-12">
             <h1 className="text-xs-center">{pageTitle}</h1>

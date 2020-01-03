@@ -19,19 +19,16 @@ export default url => {
       return;
     }
 
-    console.log('options');
-    console.log(options);
-
     axios(BASE_URL + url, options)
       .then(res => {
         console.log('success', res);
-        setIsLoading(false);
         setResponse(res.data);
+        setIsLoading(false);
       })
       .catch(error => {
         console.log('error', error);
-        setIsLoading(false);
         setError(error.response.data);
+        setIsLoading(false);
       });
   }, [isLoading]);
 
