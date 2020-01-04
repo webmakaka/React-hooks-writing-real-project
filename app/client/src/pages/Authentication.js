@@ -39,7 +39,7 @@ export const Authentication = props => {
 
     setToken(response.user.token);
     setIsSuccessfullSubmit(true);
-  }, [response]);
+  }, [response, setToken]);
 
   if (isSuccessfullSubmit) {
     return <Redirect to="/" />;
