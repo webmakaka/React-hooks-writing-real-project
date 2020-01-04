@@ -6,6 +6,8 @@ import useLocalStorage from 'hooks/useLocalStorage';
 
 import { CurrentUserContext } from 'contexts/currentUser';
 
+import BackendErrorMessages from 'components/BackendErrorMessages';
+
 export const Authentication = props => {
   const isLogin = props.match.path === '/login';
   const pageTitle = isLogin ? 'Sign In' : 'Sign Up';
@@ -24,7 +26,7 @@ export const Authentication = props => {
 
   console.log('currentUserState', currentUserState);
 
-  const [{ isLoading, error, response }, doFetch] = useFetch(apiUrl);
+  const [{ response, isLoading, error }, doFetch] = useFetch(apiUrl);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -52,7 +54,7 @@ export const Authentication = props => {
       isLoading: false,
       currentUser: response.user
     }));
-  }, [response, setToken]);
+  }, [response, setToken, setCurrentUserState]);
 
   if (isSuccessfullSubmit) {
     return <Redirect to="/" />;
@@ -68,6 +70,7 @@ export const Authentication = props => {
               <Link to={descriptionLink}>{descriptionText}</Link>
             </p>
             <form onSubmit={handleSubmit}>
+              {error && <BackendErrorMessages backendErrors={error.errors} />}
               <fieldset>
                 {!isLogin && (
                   <fieldset className="form-group">
