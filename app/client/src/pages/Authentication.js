@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 
 import useFetch from 'hooks/useFetch';
 import useLocalStorage from 'hooks/useLocalStorage';
+
+import { CurrentUserContext } from 'contexts/currentUser';
 
 export const Authentication = props => {
   const isLogin = props.match.path === '/login';
@@ -16,6 +18,11 @@ export const Authentication = props => {
   const [username, setUsername] = useState('');
   const [isSuccessfullSubmit, setIsSuccessfullSubmit] = useState(false);
   const [token, setToken] = useLocalStorage('token');
+  const [currentUserState, setCurrentUserState] = useContext(
+    CurrentUserContext
+  );
+
+  console.log('currentUserState', currentUserState);
 
   const [{ isLoading, error, response }, doFetch] = useFetch(apiUrl);
 
@@ -39,6 +46,12 @@ export const Authentication = props => {
 
     setToken(response.user.token);
     setIsSuccessfullSubmit(true);
+    setCurrentUserState(state => ({
+      ...state,
+      isLoggedIn: true,
+      isLoading: false,
+      currentUser: response.user
+    }));
   }, [response, setToken]);
 
   if (isSuccessfullSubmit) {
