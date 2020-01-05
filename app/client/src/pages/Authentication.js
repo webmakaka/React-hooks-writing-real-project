@@ -24,8 +24,6 @@ export const Authentication = props => {
     CurrentUserContext
   );
 
-  console.log('currentUserState', currentUserState);
-
   const [{ response, isLoading, error }, doFetch] = useFetch(apiUrl);
 
   const handleSubmit = event => {
