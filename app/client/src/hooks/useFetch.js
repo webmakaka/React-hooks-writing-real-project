@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import useLocalStorage from 'hooks/useLocalStorage';
+
 export default url => {
   const BASE_URL = 'https://conduit.productionready.io/api';
 
@@ -8,6 +10,7 @@ export default url => {
   const [response, setResponse] = useState(null);
   const [error, setError] = useState(null);
   const [options, setOptions] = useState({});
+  const [token] = useLocalStorage('token');
 
   const doFetch = (options = {}) => {
     setOptions(options);
@@ -15,11 +18,20 @@ export default url => {
   };
 
   useEffect(() => {
+    const requestOptions = {
+      ...options,
+      ...{
+        headers: {
+          authorization: token ? `Token ${token}` : ''
+        }
+      }
+    };
+
     if (!isLoading) {
       return;
     }
 
-    axios(BASE_URL + url, options)
+    axios(BASE_URL + url, requestOptions)
       .then(res => {
         console.log('success', res);
         setResponse(res.data);

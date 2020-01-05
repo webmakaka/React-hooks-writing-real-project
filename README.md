@@ -66,7 +66,7 @@
 
 ### 015 Страница регистрации
 
-Check service:
+**Check service:**
 
 ```
 $ curl \
@@ -121,6 +121,13 @@ $ curl \
 <br/>
 
 ![Application](/img/pic-03.png?raw=true)
+
+
+<br/>
+
+### 021 Получаем текущего юзера
+
+
 
 ---
 
