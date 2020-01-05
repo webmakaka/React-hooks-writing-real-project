@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext, Fragment } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
+import { CurrentUserContext } from 'contexts/currentUser';
+
 export const TopBar = () => {
+  const [currentUserState] = useContext(CurrentUserContext);
+
   return (
     <nav className="navbar navbar-light">
       <div className="container">
@@ -14,16 +18,45 @@ export const TopBar = () => {
               Home
             </NavLink>
           </li>
-          <li className="nav-item">
-            <NavLink to="/login" className="nav-link" exact>
-              Sign in
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink to="/register" className="nav-link" exact>
-              Sign up
-            </NavLink>
-          </li>
+          {currentUserState.isLoggedIn === false && (
+            <Fragment>
+              <li className="nav-item">
+                <NavLink to="/login" className="nav-link" exact>
+                  Sign in
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/register" className="nav-link" exact>
+                  Sign up
+                </NavLink>
+              </li>
+            </Fragment>
+          )}
+
+          {currentUserState.isLoggedIn && (
+            <Fragment>
+              <li className="nav-item">
+                <NavLink to="/articles/new" className="nav-link">
+                  <i className="ion-compose"></i>
+                  &nbsp; New Post
+                </NavLink>
+              </li>
+
+              <li className="nav-item">
+                <NavLink
+                  to={`/profiles/${currentUserState.currentUser.username}`}
+                  className="nav-link"
+                >
+                  <img
+                    className="user-pic"
+                    src={currentUserState.currentUser.image}
+                    alt=""
+                  />
+                  &nbsp; {currentUserState.currentUser.username}
+                </NavLink>
+              </li>
+            </Fragment>
+          )}
         </ul>
       </div>
     </nav>

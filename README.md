@@ -131,6 +131,14 @@ $ curl \
 
 ### 022 Use callback хук
 
+<br/>
+
+### 023 Улучшаем верхнее меню
+
+<br/>
+
+![Application](/img/pic-04.png?raw=true)
+
 ---
 
 **Marley**
