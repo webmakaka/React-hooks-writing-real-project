@@ -147,6 +147,18 @@ $ curl \
 
 ![Application](/img/pic-05.png?raw=true)
 
+<br/>
+
+### 025 Реализуем пагинацию
+
+    $ npm install --save classnames
+    $ npm install --save query-string
+
+<br/>
+
+![Application](/img/pic-06.png?raw=true)
+
+
 ---
 
 **Marley**

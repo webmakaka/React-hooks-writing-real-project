@@ -1,15 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Fragment } from 'react';
+import { stringify } from 'query-string';
 import useFetch from 'hooks/useFetch';
 import Feed from 'components/Feed';
+import Pagination from 'components/Pagination';
+import { getPaginator, LIMIT } from 'utils';
 
-export const GlobalFeed = () => {
-  const apiUrl = '/articles?limit=10&offset=0';
+export const GlobalFeed = ({ location, match: { url } }) => {
+  const { offset, currentPage } = getPaginator(location.search);
+  const stringifiedParams = stringify({
+    limit: LIMIT,
+    offset
+  });
+  const apiUrl = `/articles?${stringifiedParams}`;
   const [{ response, isLoading, error }, doFetch] = useFetch(apiUrl);
-  console.log('response', response);
 
   useEffect(() => {
     doFetch();
-  }, [doFetch]);
+  }, [doFetch, currentPage]);
 
   return (
     <div className="home-page">
@@ -24,7 +31,17 @@ export const GlobalFeed = () => {
           <div className="col-md-9">
             {isLoading && <div>Loading...</div>}
             {error && <div>Some error happened</div>}
-            {!isLoading && response && <Feed articles={response.articles} />}
+            {!isLoading && response && (
+              <Fragment>
+                <Feed articles={response.articles} />
+                <Pagination
+                  total={response.articlesCount}
+                  limit={LIMIT}
+                  url={url}
+                  currentPage={currentPage}
+                />
+              </Fragment>
+            )}
           </div>
           <div className="col-md-3">Popular tags</div>
         </div>
