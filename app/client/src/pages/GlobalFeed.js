@@ -3,6 +3,9 @@ import { stringify } from 'query-string';
 import useFetch from 'hooks/useFetch';
 import Feed from 'components/Feed';
 import Pagination from 'components/Pagination';
+import PopularTags from 'components/PopularTags';
+import Loading from 'components/Loading';
+import ErrorMessage from 'components/ErrorMessage';
 import { getPaginator, LIMIT } from 'utils';
 
 export const GlobalFeed = ({ location, match: { url } }) => {
@@ -29,8 +32,8 @@ export const GlobalFeed = ({ location, match: { url } }) => {
       <div className="container page">
         <div className="row">
           <div className="col-md-9">
-            {isLoading && <div>Loading...</div>}
-            {error && <div>Some error happened</div>}
+            {isLoading && <Loading />}
+            {error && <ErrorMessage />}
             {!isLoading && response && (
               <Fragment>
                 <Feed articles={response.articles} />
@@ -43,7 +46,9 @@ export const GlobalFeed = ({ location, match: { url } }) => {
               </Fragment>
             )}
           </div>
-          <div className="col-md-3">Popular tags</div>
+          <div className="col-md-3">
+            <PopularTags />
+          </div>
         </div>
       </div>
     </div>

@@ -159,6 +159,14 @@ $ curl \
 ![Application](/img/pic-06.png?raw=true)
 
 
+<br/>
+
+### 026 Добавляем популярные теги
+
+<br/>
+
+![Application](/img/pic-07.png?raw=true)
+
 ---
 
 **Marley**
