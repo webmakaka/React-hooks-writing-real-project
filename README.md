@@ -139,6 +139,14 @@ $ curl \
 
 ![Application](/img/pic-04.png?raw=true)
 
+<br/>
+
+### 024 Создаем фид
+
+<br/>
+
+![Application](/img/pic-05.png?raw=true)
+
 ---
 
 **Marley**
