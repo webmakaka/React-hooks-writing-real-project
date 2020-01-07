@@ -192,6 +192,15 @@ $ curl \
 
 ![Application](/img/pic-10.png?raw=true)
 
+<br/>
+
+### 030 Страница поста
+
+<br/>
+
+![Application](/img/pic-11.png?raw=true)
+
+
 ---
 
 **Marley**
