@@ -205,6 +205,14 @@ $ curl \
 
 ### 031 Use reducer
 
+<br/>
+
+### 032 Форма поста
+
+<br/>
+
+![Application](/img/pic-12.png?raw=true)
+
 ---
 
 **Marley**
