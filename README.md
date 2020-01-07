@@ -184,6 +184,14 @@ $ curl \
 
 ![Application](/img/pic-09.png?raw=true)
 
+<br/>
+
+### 029 Реализуем твой фид
+
+<br/>
+
+![Application](/img/pic-10.png?raw=true)
+
 ---
 
 **Marley**
