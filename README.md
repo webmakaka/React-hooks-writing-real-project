@@ -201,6 +201,10 @@ $ curl \
 ![Application](/img/pic-11.png?raw=true)
 
 
+<br/>
+
+### 031 Use reducer
+
 ---
 
 **Marley**
