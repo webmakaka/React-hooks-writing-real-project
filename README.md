@@ -175,6 +175,15 @@ $ curl \
 
 ![Application](/img/pic-08.png?raw=true)
 
+
+<br/>
+
+### 028 Реализуем фид по тегу
+
+<br/>
+
+![Application](/img/pic-09.png?raw=true)
+
 ---
 
 **Marley**
