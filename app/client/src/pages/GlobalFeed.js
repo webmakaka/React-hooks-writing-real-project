@@ -2,6 +2,7 @@ import React, { useEffect, Fragment } from 'react';
 import { stringify } from 'query-string';
 import useFetch from 'hooks/useFetch';
 import Feed from 'components/Feed';
+import FeedToggler from 'components/FeedToggler';
 import Pagination from 'components/Pagination';
 import PopularTags from 'components/PopularTags';
 import Loading from 'components/Loading';
@@ -32,6 +33,7 @@ export const GlobalFeed = ({ location, match: { url } }) => {
       <div className="container page">
         <div className="row">
           <div className="col-md-9">
+            <FeedToggler tagName="foo" />
             {isLoading && <Loading />}
             {error && <ErrorMessage />}
             {!isLoading && response && (

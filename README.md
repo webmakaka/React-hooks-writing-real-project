@@ -167,6 +167,14 @@ $ curl \
 
 ![Application](/img/pic-07.png?raw=true)
 
+<br/>
+
+### 027 Переключение между фидами
+
+<br/>
+
+![Application](/img/pic-08.png?raw=true)
+
 ---
 
 **Marley**
