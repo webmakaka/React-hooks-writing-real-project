@@ -213,6 +213,14 @@ $ curl \
 
 ![Application](/img/pic-12.png?raw=true)
 
+<br/>
+
+### 033 Создание поста
+
+<br/>
+
+![Application](/img/pic-13.png?raw=true)
+
 ---
 
 **Marley**
