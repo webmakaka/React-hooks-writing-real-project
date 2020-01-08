@@ -221,6 +221,10 @@ $ curl \
 
 ![Application](/img/pic-13.png?raw=true)
 
+<br/>
+
+### 034 Редактирование поста
+
 ---
 
 **Marley**

@@ -32,15 +32,16 @@ export const CreateArticle = () => {
       return;
     }
 
-    if (currentUserState.isLoggedIn === false) {
-      return <Redirect to={'/'} />;
-    }
-
     setIsSuccessfullSubmit(true);
-    if (isSuccessfullSubmit) {
-      return <Redirect to={`/articles/${response.article.slug}`} />;
-    }
   }, [response]);
+
+  if (currentUserState.isLoggedIn === false) {
+    return <Redirect to={'/'} />;
+  }
+
+  if (isSuccessfullSubmit) {
+    return <Redirect to={`/articles/${response.article.slug}`} />;
+  }
 
   return (
     <div>
