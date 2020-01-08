@@ -229,6 +229,14 @@ $ curl \
 
 ### 035 Удаление поста
 
+<br/>
+
+### 036 Страница настроек
+
+<br/>
+
+![Application](/img/pic-14.png?raw=true)
+
 ---
 
 **Marley**
