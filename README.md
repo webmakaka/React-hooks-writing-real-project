@@ -246,6 +246,15 @@ $ curl \
 
 ![Application](/img/pic-15.png?raw=true)
 
+
+<br/>
+
+### 038 Профиль пользователя
+
+<br/>
+
+![Application](/img/pic-16.png?raw=true)
+
 ---
 
 **Marley**
