@@ -264,6 +264,14 @@ $ curl \
 
 ![Application](/img/pic-17.png?raw=true)
 
+<br/>
+
+![Application](/img/pic-18.png?raw=true)
+
+<br/>
+
+### 040 Use effect callback
+
 ---
 
 **Marley**
