@@ -237,6 +237,15 @@ $ curl \
 
 ![Application](/img/pic-14.png?raw=true)
 
+
+<br/>
+
+### 037 Добавляем в избранное
+
+<br/>
+
+![Application](/img/pic-15.png?raw=true)
+
 ---
 
 **Marley**
