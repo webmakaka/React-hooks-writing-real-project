@@ -255,6 +255,15 @@ $ curl \
 
 ![Application](/img/pic-16.png?raw=true)
 
+
+<br/>
+
+### 039 Реализуем статьи пользователя
+
+<br/>
+
+![Application](/img/pic-17.png?raw=true)
+
 ---
 
 **Marley**

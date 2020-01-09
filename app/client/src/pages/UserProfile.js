@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 import useFetch from 'hooks/useFetch';
 
+import { UserArticles } from 'pages/UserArticles';
+
 export const UserProfile = ({ location, match }) => {
   const slug = match.params.slug;
   const isFavorites = location.pathname.includes('favorites');
@@ -55,7 +57,12 @@ export const UserProfile = ({ location, match }) => {
                 </li>
               </ul>
             </div>
-            User Articles
+            <UserArticles
+              username={response.profile.username}
+              location={location}
+              isFavorites={isFavorites}
+              url={match.url}
+            />
           </div>
         </div>
       </div>
