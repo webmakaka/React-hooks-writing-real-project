@@ -1,5 +1,8 @@
 # [React] [Udemy, Oleksandr Kocherhin] React Hooks - Пишем Реальный Проект с Нуля [2019, RUS]
 
+**Готовый проект:**  
+http://angular.realworld.io/
+
 <br/>
 
 ### 004 Создание проекта
