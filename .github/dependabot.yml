@@ -1,6 +1,16 @@
-version: 2
-updates:
-  - package-ecosystem: "npm"
+version: 1
+update_configs:
+  - package_manager: "javascript"
     directory: "/app/client/"
-    schedule:
-      interval: "daily"
+    update_schedule: "daily"
+    automerged_updates:
+      - match:
+          dependency_type: "production"
+          update_type: "all"    
+
+#version: 2
+#updates:
+#  - package-ecosystem: "npm"
+#    directory: "/app/client/"
+#    schedule:
+#      interval: "daily"
