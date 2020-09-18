@@ -4,3 +4,5 @@ updates:
     directory: "/app/client/"
     schedule:
       interval: "daily"
+    allow:
+      - dependency-type: "all"
