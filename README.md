@@ -1,4 +1,4 @@
-# [React] [Udemy, Oleksandr Kocherhin] React Hooks - Пишем Реальный Проект с Нуля [2019, RUS]
+# [Udemy, Oleksandr Kocherhin] React Hooks - Пишем Реальный Проект с Нуля [RUS, 2019]
 
 **Готовый проект:**  
 https://react-redux.realworld.io
