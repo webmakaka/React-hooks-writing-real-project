@@ -1,7 +1,6 @@
-import React, { useContext, Fragment } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-
 import { CurrentUserContext } from 'contexts/currentUser';
+import React, { Fragment, useContext } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 export const TopBar = () => {
   const [currentUserState] = useContext(CurrentUserContext);

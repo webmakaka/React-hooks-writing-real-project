@@ -1,6 +1,6 @@
+import { CurrentUserContext } from 'contexts/currentUser';
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import { CurrentUserContext } from 'contexts/currentUser';
 
 const FeedToggler = ({ tagName }) => {
   const [currentUserState] = useContext(CurrentUserContext);

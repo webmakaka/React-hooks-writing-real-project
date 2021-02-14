@@ -1,10 +1,9 @@
-import React from 'react';
-import { createContext, useReducer } from 'react';
+import React, { createContext, useReducer } from 'react';
 
 const initialState = {
   isLoading: false,
   isLoggedIn: null,
-  currentUser: null
+  currentUser: null,
 };
 
 const reducer = (state, action) => {
@@ -16,17 +15,17 @@ const reducer = (state, action) => {
         ...state,
         isLoggedIn: true,
         isLoading: false,
-        currentUser: action.payload
+        currentUser: action.payload,
       };
     case 'SET_UNAUTHORIZED':
       return {
         ...state,
-        isLoggedIn: false
+        isLoggedIn: false,
       };
     case 'LOGOUT':
       return {
         ...initialState,
-        isLoggedIn: false
+        isLoggedIn: false,
       };
     default:
       return state;

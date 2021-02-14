@@ -1,9 +1,7 @@
+import { AddToFavorires } from 'components/AddToFavorires';
+import { TagList } from 'components/TagList';
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-import { TagList } from 'components/TagList';
-
-import { AddToFavorires } from 'components/AddToFavorires';
 
 const Feed = ({ articles }) => {
   return (

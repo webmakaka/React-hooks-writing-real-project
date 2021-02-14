@@ -1,6 +1,6 @@
+import PaginationItem from 'components/PaginationItem';
 import React from 'react';
 import { range } from 'utils';
-import PaginationItem from 'components/PaginationItem';
 
 const Pagination = ({ total, limit, url, currentPage }) => {
   const pagesCount = Math.ceil(total / limit);
@@ -8,7 +8,7 @@ const Pagination = ({ total, limit, url, currentPage }) => {
 
   return (
     <ul className="pagination">
-      {pages.map(page => (
+      {pages.map((page) => (
         <PaginationItem
           page={page}
           currentPage={currentPage}

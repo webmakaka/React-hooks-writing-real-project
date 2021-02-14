@@ -1,10 +1,9 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
-
+import BackendErrorMessages from 'components/BackendErrorMessages';
+import { CurrentUserContext } from 'contexts/currentUser';
 import useFetch from 'hooks/useFetch';
 import useLocalStorage from 'hooks/useLocalStorage';
-import { CurrentUserContext } from 'contexts/currentUser';
-import BackendErrorMessages from 'components/BackendErrorMessages';
+import React, { useContext, useEffect, useState } from 'react';
+import { Redirect } from 'react-router-dom';
 
 export const Settings = () => {
   const [currentUserState, dispatch] = useContext(CurrentUserContext);
@@ -38,7 +37,7 @@ export const Settings = () => {
     dispatch({ type: 'SET_AUTHORIZED', payload: response.user });
   }, [response, dispatch]);
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
 
     doFetch({
@@ -50,13 +49,13 @@ export const Settings = () => {
           username,
           bio,
           email,
-          password
-        }
-      }
+          password,
+        },
+      },
     });
   };
 
-  const logout = event => {
+  const logout = (event) => {
     event.preventDefault();
     setToken('');
     dispatch({ type: 'LOGOUT' });
@@ -83,7 +82,7 @@ export const Settings = () => {
                     className="form-control form-control-lg"
                     placeholder="URL of profile picture"
                     value={image}
-                    onChange={e => setImage(e.target.value)}
+                    onChange={(e) => setImage(e.target.value)}
                   />
                 </fieldset>
 
@@ -93,7 +92,7 @@ export const Settings = () => {
                     className="form-control form-control-lg"
                     placeholder="Username"
                     value={username}
-                    onChange={e => setUsername(e.target.value)}
+                    onChange={(e) => setUsername(e.target.value)}
                   />
                 </fieldset>
 
@@ -103,7 +102,7 @@ export const Settings = () => {
                     rows="8"
                     placeholder="Short bio"
                     value={bio}
-                    onChange={e => setBio(e.target.value)}
+                    onChange={(e) => setBio(e.target.value)}
                   ></textarea>
                 </fieldset>
 
@@ -113,7 +112,7 @@ export const Settings = () => {
                     className="form-control form-control-lg"
                     placeholder="Email"
                     value={email}
-                    onChange={e => setEmail(e.target.value)}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </fieldset>
 
@@ -123,7 +122,7 @@ export const Settings = () => {
                     className="form-control form-control-lg"
                     placeholder="Password"
                     value={password}
-                    onChange={e => setPassword(e.target.value)}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </fieldset>
                 <button

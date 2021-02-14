@@ -1,9 +1,8 @@
+import ErrorMessage from 'components/ErrorMessage';
+import Loading from 'components/Loading';
+import useFetch from 'hooks/useFetch';
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import useFetch from 'hooks/useFetch';
-
-import Loading from 'components/Loading';
-import ErrorMessage from 'components/ErrorMessage';
 
 const PopularTags = () => {
   const [{ response, isLoading, error }, doFetch] = useFetch('/tags');
@@ -24,7 +23,7 @@ const PopularTags = () => {
     <div className="sidebar">
       <p>Popular tags</p>
       <div className="tag-list">
-        {response.tags.map(tag => (
+        {response.tags.map((tag) => (
           <Link to={`/tags/${tag}`} className="tag-default tag-pill" key={tag}>
             {tag}
           </Link>

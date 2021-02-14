@@ -1,22 +1,21 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import useFetch from 'hooks/useFetch';
-
-import Loading from 'components/Loading';
 import ErrorMessage from 'components/ErrorMessage';
-import { CurrentUserContext } from 'contexts/currentUser';
+import Loading from 'components/Loading';
 import { TagList } from 'components/TagList';
+import { CurrentUserContext } from 'contexts/currentUser';
+import useFetch from 'hooks/useFetch';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 
-export const Article = props => {
+export const Article = (props) => {
   const slug = props.match.params.slug;
   const apiUrl = `/articles/${slug}`;
   const [
     {
       response: fetchArticleResponse,
       error: fetchArticleError,
-      isLoading: fetchArticleIsLoading
+      isLoading: fetchArticleIsLoading,
     },
-    doFetch
+    doFetch,
   ] = useFetch(apiUrl);
   const [{ response: deleteArticleResponse }, doDeleteArticle] = useFetch(
     apiUrl
@@ -37,7 +36,7 @@ export const Article = props => {
 
   const deleteArticle = () => {
     doDeleteArticle({
-      method: 'delete'
+      method: 'delete',
     });
   };
 

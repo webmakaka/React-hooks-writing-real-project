@@ -1,11 +1,11 @@
+import classNames from 'classnames';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import classNames from 'classnames';
 
 const PaginationItem = ({ page, currentPage, url }) => {
   const liClasses = classNames({
     'page-item': true,
-    active: currentPage === page
+    active: currentPage === page,
   });
 
   return (

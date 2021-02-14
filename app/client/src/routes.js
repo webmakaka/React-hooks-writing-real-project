@@ -1,14 +1,14 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import { GlobalFeed } from 'pages/GlobalFeed';
-import { TagFeed } from 'pages/TagFeed';
-import { YourFeed } from 'pages/YourFeed';
 import { Article } from 'pages/Article';
 import { Authentication } from 'pages/Authentication';
 import { CreateArticle } from 'pages/CreateArticle';
 import { EditArticle } from 'pages/EditArticle';
+import { GlobalFeed } from 'pages/GlobalFeed';
 import { Settings } from 'pages/Settings';
+import { TagFeed } from 'pages/TagFeed';
 import { UserProfile } from 'pages/UserProfile';
+import { YourFeed } from 'pages/YourFeed';
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 
 export default () => {
   return (

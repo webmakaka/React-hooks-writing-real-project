@@ -1,8 +1,7 @@
-import { useEffect, useContext } from 'react';
-import useFetch from 'hooks/useFetch';
-
 import { CurrentUserContext } from 'contexts/currentUser';
+import useFetch from 'hooks/useFetch';
 import useLocalStorage from 'hooks/useLocalStorage';
+import { useContext, useEffect } from 'react';
 
 const CurrentUserChecker = ({ children }) => {
   const [{ response }, doFetch] = useFetch('/user');

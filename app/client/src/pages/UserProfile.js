@@ -1,9 +1,7 @@
+import useFetch from 'hooks/useFetch';
+import { UserArticles } from 'pages/UserArticles';
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-
-import useFetch from 'hooks/useFetch';
-
-import { UserArticles } from 'pages/UserArticles';
 
 export const UserProfile = ({ location, match }) => {
   const slug = match.params.slug;

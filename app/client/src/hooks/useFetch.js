@@ -1,9 +1,8 @@
-import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
-
 import useLocalStorage from 'hooks/useLocalStorage';
+import { useCallback, useEffect, useState } from 'react';
 
-export default url => {
+export default (url) => {
   const BASE_URL = 'https://conduit.productionready.io/api';
 
   const [isLoading, setIsLoading] = useState(false);
@@ -23,9 +22,9 @@ export default url => {
       ...options,
       ...{
         headers: {
-          authorization: token ? `Token ${token}` : ''
-        }
-      }
+          authorization: token ? `Token ${token}` : '',
+        },
+      },
     };
 
     if (!isLoading) {
@@ -33,13 +32,13 @@ export default url => {
     }
 
     axios(BASE_URL + url, requestOptions)
-      .then(res => {
+      .then((res) => {
         if (!skipGetResponseAfterDestroy) {
           setResponse(res.data);
           setIsLoading(false);
         }
       })
-      .catch(error => {
+      .catch((error) => {
         if (!skipGetResponseAfterDestroy) {
           setError(error.response.data);
           setIsLoading(false);

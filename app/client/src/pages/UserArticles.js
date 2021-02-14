@@ -1,13 +1,11 @@
-import React, { useEffect, Fragment } from 'react';
-import { stringify } from 'query-string';
-
-import useFetch from 'hooks/useFetch';
-import { getPaginator, LIMIT } from 'utils';
-
+import ErrorMessage from 'components/ErrorMessage';
 import Feed from 'components/Feed';
 import Loading from 'components/Loading';
-import ErrorMessage from 'components/ErrorMessage';
 import Pagination from 'components/Pagination';
+import useFetch from 'hooks/useFetch';
+import { stringify } from 'query-string';
+import React, { Fragment, useEffect } from 'react';
+import { getPaginator, LIMIT } from 'utils';
 
 const getApiUrl = ({ username, offset, isFavorites }) => {
   const params = isFavorites

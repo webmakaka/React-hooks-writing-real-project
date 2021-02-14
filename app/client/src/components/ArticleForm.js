@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-
 import BackendErrorMessages from 'components/BackendErrorMessages';
+import React, { useEffect, useState } from 'react';
 
 export const ArticleForm = ({ onSubmit, errors, initialValues }) => {
   const [title, setTitle] = useState('');
@@ -8,13 +7,13 @@ export const ArticleForm = ({ onSubmit, errors, initialValues }) => {
   const [description, setDescription] = useState('');
   const [tagList, setTagList] = useState('');
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const article = {
       title,
       body,
       description,
-      tagList
+      tagList,
     };
     onSubmit(article);
   };
@@ -44,7 +43,7 @@ export const ArticleForm = ({ onSubmit, errors, initialValues }) => {
                     className="form-control form-control-lg"
                     placeholder="Article title"
                     value={title}
-                    onChange={e => setTitle(e.target.value)}
+                    onChange={(e) => setTitle(e.target.value)}
                   />
                 </fieldset>
 
@@ -54,7 +53,7 @@ export const ArticleForm = ({ onSubmit, errors, initialValues }) => {
                     className="form-control form-control-lg"
                     placeholder="What is this article about?"
                     value={description}
-                    onChange={e => setDescription(e.target.value)}
+                    onChange={(e) => setDescription(e.target.value)}
                   />
                 </fieldset>
 
@@ -64,7 +63,7 @@ export const ArticleForm = ({ onSubmit, errors, initialValues }) => {
                     rows="8"
                     placeholder="Write your article (in markdown)"
                     value={body}
-                    onChange={e => setBody(e.target.value)}
+                    onChange={(e) => setBody(e.target.value)}
                   ></textarea>
                 </fieldset>
 
@@ -74,7 +73,7 @@ export const ArticleForm = ({ onSubmit, errors, initialValues }) => {
                     className="form-control form-control-lg"
                     placeholder="Enter tags"
                     value={tagList}
-                    onChange={e => setTagList(e.target.value)}
+                    onChange={(e) => setTagList(e.target.value)}
                   />
                 </fieldset>
 

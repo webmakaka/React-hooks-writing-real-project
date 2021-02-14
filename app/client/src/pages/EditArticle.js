@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { Redirect } from 'react-router-dom';
-
-import useFetch from 'hooks/useFetch';
-import { CurrentUserContext } from 'contexts/currentUser';
-
 import { ArticleForm } from 'components/ArticleForm';
+import { CurrentUserContext } from 'contexts/currentUser';
+import useFetch from 'hooks/useFetch';
+import React, { useContext, useEffect, useState } from 'react';
+import { Redirect } from 'react-router-dom';
 
 export const EditArticle = ({ match }) => {
   const slug = match.params.slug;
@@ -14,18 +12,18 @@ export const EditArticle = ({ match }) => {
   const [{ response: fetchArticleResponse }, doFetchArticle] = useFetch(apiUrl);
   const [
     { response: updateArticleResponse, error: updateArticleError },
-    doUpdateArticle
+    doUpdateArticle,
   ] = useFetch(apiUrl);
   const [initialValues, setInitialValues] = useState(null);
 
   const [isSuccessfullSubmit, setIsSuccessfullSubmit] = useState(false);
 
-  const handleSubmit = article => {
+  const handleSubmit = (article) => {
     doUpdateArticle({
       method: 'put',
       data: {
-        article
-      }
+        article,
+      },
     });
   };
 
@@ -41,7 +39,7 @@ export const EditArticle = ({ match }) => {
       title: fetchArticleResponse.article.title,
       description: fetchArticleResponse.article.description,
       body: fetchArticleResponse.article.body,
-      tagList: fetchArticleResponse.article.tagList
+      tagList: fetchArticleResponse.article.tagList,
     });
   }, [fetchArticleResponse]);
 

@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { Redirect } from 'react-router-dom';
-
-import useFetch from 'hooks/useFetch';
-import { CurrentUserContext } from 'contexts/currentUser';
-
 import { ArticleForm } from 'components/ArticleForm';
+import { CurrentUserContext } from 'contexts/currentUser';
+import useFetch from 'hooks/useFetch';
+import React, { useContext, useEffect, useState } from 'react';
+import { Redirect } from 'react-router-dom';
 
 export const CreateArticle = () => {
   const apiUrl = '/articles';
@@ -14,16 +12,16 @@ export const CreateArticle = () => {
     title: '',
     description: '',
     body: '',
-    tagList: []
+    tagList: [],
   };
   const [isSuccessfullSubmit, setIsSuccessfullSubmit] = useState(false);
-  const handleSubmit = article => {
+  const handleSubmit = (article) => {
     console.log('handleSubmit', article);
     doFetch({
       method: 'post',
       data: {
-        article
-      }
+        article,
+      },
     });
   };
 

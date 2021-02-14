@@ -1,19 +1,19 @@
-import React, { useEffect, Fragment } from 'react';
-import { stringify } from 'query-string';
-import useFetch from 'hooks/useFetch';
+import ErrorMessage from 'components/ErrorMessage';
 import Feed from 'components/Feed';
 import FeedToggler from 'components/FeedToggler';
+import Loading from 'components/Loading';
 import Pagination from 'components/Pagination';
 import PopularTags from 'components/PopularTags';
-import Loading from 'components/Loading';
-import ErrorMessage from 'components/ErrorMessage';
+import useFetch from 'hooks/useFetch';
+import { stringify } from 'query-string';
+import React, { Fragment, useEffect } from 'react';
 import { getPaginator, LIMIT } from 'utils';
 
 export const GlobalFeed = ({ location, match: { url } }) => {
   const { offset, currentPage } = getPaginator(location.search);
   const stringifiedParams = stringify({
     limit: LIMIT,
-    offset
+    offset,
   });
   const apiUrl = `/articles?${stringifiedParams}`;
   const [{ response, isLoading, error }, doFetch] = useFetch(apiUrl);

@@ -1,14 +1,11 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { Link, Redirect } from 'react-router-dom';
-
+import BackendErrorMessages from 'components/BackendErrorMessages';
+import { CurrentUserContext } from 'contexts/currentUser';
 import useFetch from 'hooks/useFetch';
 import useLocalStorage from 'hooks/useLocalStorage';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 
-import { CurrentUserContext } from 'contexts/currentUser';
-
-import BackendErrorMessages from 'components/BackendErrorMessages';
-
-export const Authentication = props => {
+export const Authentication = (props) => {
   const isLogin = props.match.path === '/login';
   const pageTitle = isLogin ? 'Sign In' : 'Sign Up';
   const descriptionLink = isLogin ? '/register' : '/login';
@@ -24,7 +21,7 @@ export const Authentication = props => {
 
   const [{ response, isLoading, error }, doFetch] = useFetch(apiUrl);
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
 
     const user = isLogin ? { email, password } : { email, password, username };
@@ -32,8 +29,8 @@ export const Authentication = props => {
     doFetch({
       method: 'post',
       data: {
-        user
-      }
+        user,
+      },
     });
   };
 
@@ -70,7 +67,7 @@ export const Authentication = props => {
                       className="form-control form-control-lg"
                       placeholder="Username"
                       value={username}
-                      onChange={e => setUsername(e.target.value)}
+                      onChange={(e) => setUsername(e.target.value)}
                     />
                   </fieldset>
                 )}
@@ -81,7 +78,7 @@ export const Authentication = props => {
                     className="form-control form-control-lg"
                     placeholder="Email"
                     value={email}
-                    onChange={e => setEmail(e.target.value)}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </fieldset>
 
@@ -91,7 +88,7 @@ export const Authentication = props => {
                     className="form-control form-control-lg"
                     placeholder="Password"
                     value={password}
-                    onChange={e => setPassword(e.target.value)}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </fieldset>
                 <button
