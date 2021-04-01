@@ -1,7 +1,14 @@
 # [Oleksandr Kocherhin] React Hooks - Пишем Реальный Проект с Нуля [RUS, 2019]
 
+<!--
+
 **Пример ожидаемого финального проекта:**  
 https://react-redux.realworld.io
+
+-->
+
+**Задеплоенный проект на pages от cloudflare:**  
+https://react-hooks-writing-real-project.pages.dev/
 
 <br/>
 
