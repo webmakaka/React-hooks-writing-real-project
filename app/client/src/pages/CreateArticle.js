@@ -16,7 +16,6 @@ export const CreateArticle = () => {
   };
   const [isSuccessfullSubmit, setIsSuccessfullSubmit] = useState(false);
   const handleSubmit = (article) => {
-    console.log('handleSubmit', article);
     doFetch({
       method: 'post',
       data: {
