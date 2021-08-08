@@ -15,7 +15,7 @@ export const Settings = () => {
   const [bio, setBio] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isSuccessfullLogout, setIsSuccessfullLogout] = useState(false);
+  const [isSuccessfulLogout, setIsSuccessfulLogout] = useState(false);
   const [, setToken] = useLocalStorage('token');
 
   useEffect(() => {
@@ -60,10 +60,10 @@ export const Settings = () => {
     setToken('');
     dispatch({ type: 'LOGOUT' });
 
-    setIsSuccessfullLogout(true);
+    setIsSuccessfulLogout(true);
   };
 
-  if (isSuccessfullLogout) {
+  if (isSuccessfulLogout) {
     return <Redirect to="/" />;
   }
 

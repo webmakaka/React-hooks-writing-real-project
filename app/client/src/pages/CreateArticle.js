@@ -14,7 +14,7 @@ export const CreateArticle = () => {
     body: '',
     tagList: [],
   };
-  const [isSuccessfullSubmit, setIsSuccessfullSubmit] = useState(false);
+  const [isSuccessfulSubmit, setIsSuccessfulSubmit] = useState(false);
   const handleSubmit = (article) => {
     doFetch({
       method: 'post',
@@ -29,14 +29,14 @@ export const CreateArticle = () => {
       return;
     }
 
-    setIsSuccessfullSubmit(true);
+    setIsSuccessfulSubmit(true);
   }, [response]);
 
   if (currentUserState.isLoggedIn === false) {
     return <Redirect to={'/'} />;
   }
 
-  if (isSuccessfullSubmit) {
+  if (isSuccessfulSubmit) {
     return <Redirect to={`/articles/${response.article.slug}`} />;
   }
 

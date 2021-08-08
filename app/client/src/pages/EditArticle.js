@@ -16,7 +16,7 @@ export const EditArticle = ({ match }) => {
   ] = useFetch(apiUrl);
   const [initialValues, setInitialValues] = useState(null);
 
-  const [isSuccessfullSubmit, setIsSuccessfullSubmit] = useState(false);
+  const [isSuccessfulSubmit, setIsSuccessfulSubmit] = useState(false);
 
   const handleSubmit = (article) => {
     doUpdateArticle({
@@ -48,14 +48,14 @@ export const EditArticle = ({ match }) => {
       return;
     }
 
-    setIsSuccessfullSubmit(true);
+    setIsSuccessfulSubmit(true);
   }, [updateArticleResponse]);
 
   if (currentUserState.isLoggedIn === false) {
     return <Redirect to={'/'} />;
   }
 
-  if (isSuccessfullSubmit) {
+  if (isSuccessfulSubmit) {
     return <Redirect to={`/articles/${slug}`} />;
   }
 

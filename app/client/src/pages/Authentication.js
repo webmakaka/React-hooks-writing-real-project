@@ -15,7 +15,7 @@ export const Authentication = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
-  const [isSuccessfullSubmit, setIsSuccessfullSubmit] = useState(false);
+  const [isSuccessfulSubmit, setIsSuccessfulSubmit] = useState(false);
   const [, setToken] = useLocalStorage('token');
   const [, dispatch] = useContext(CurrentUserContext);
 
@@ -40,11 +40,11 @@ export const Authentication = (props) => {
     }
 
     setToken(response.user.token);
-    setIsSuccessfullSubmit(true);
+    setIsSuccessfulSubmit(true);
     dispatch({ type: 'SET_AUTHORIZED', payload: response.user });
   }, [response, setToken, dispatch]);
 
-  if (isSuccessfullSubmit) {
+  if (isSuccessfulSubmit) {
     return <Redirect to="/" />;
   }
 

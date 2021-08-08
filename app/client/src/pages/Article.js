@@ -17,11 +17,10 @@ export const Article = (props) => {
     },
     doFetch,
   ] = useFetch(apiUrl);
-  const [{ response: deleteArticleResponse }, doDeleteArticle] = useFetch(
-    apiUrl
-  );
+  const [{ response: deleteArticleResponse }, doDeleteArticle] =
+    useFetch(apiUrl);
   const [currentUserState] = useContext(CurrentUserContext);
-  const [isSuccessfullDelete, setIsSuccessfulDelete] = useState(false);
+  const [isSuccessfulDelete, setIsSuccessfulDelete] = useState(false);
 
   const isAuthor = () => {
     if (!fetchArticleResponse || !currentUserState.isLoggedIn) {
@@ -52,7 +51,7 @@ export const Article = (props) => {
     setIsSuccessfulDelete(true);
   }, [deleteArticleResponse]);
 
-  if (isSuccessfullDelete) {
+  if (isSuccessfulDelete) {
     return <Redirect to="/" />;
   }
 
