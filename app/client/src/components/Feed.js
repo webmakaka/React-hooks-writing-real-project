@@ -1,4 +1,4 @@
-import { AddToFavorires } from 'components/AddToFavorires';
+import { AddToFavorites } from 'components/AddToFavorites';
 import { TagList } from 'components/TagList';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -23,7 +23,7 @@ const Feed = ({ articles }) => {
             </div>
 
             <div className="pull-xs-right">
-              <AddToFavorires
+              <AddToFavorites
                 isFavorited={article.favorited}
                 favoritesCount={article.favoritesCount}
                 articleSlug={article.slug}

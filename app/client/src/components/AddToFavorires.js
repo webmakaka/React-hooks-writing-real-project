@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import useFetch from 'hooks/useFetch';
 import React from 'react';
 
-export const AddToFavorires = ({
+export const AddToFavorites = ({
   isFavorited,
   favoritesCount,
   articleSlug,
